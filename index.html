@@ -7,7 +7,50 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
+    <script>
+        (function(){
+            //sessionStorage.setItem("currentUser", "admin");
+            var currentUser = sessionStorage.getItem("currentUser");
+            
+            if(currentUser === "admin"){
+                console.log("show admin");
+                hideAnalyst();
+                showAdmin();
+            }else{
+                console.log("show analyst");  
+                showAnalyst();
+                hideAdmin();
+            }
 
+          function showAdmin(){
+                var users = document.querySelectorAll(".admin")
+                for(var i=0;i<users.length;i++){
+                    users[i].style.display = "block";
+                }
+          }
+
+          function hideAdmin(){
+                var users = document.querySelectorAll(".admin")
+                for(var i=0;i<users.length;i++){
+                    users[i].style.display = "none";
+                }
+          }
+            
+          function hideAnalyst(){
+                var users = document.querySelectorAll(".analyst")
+                for(var i=0;i<users.length;i++){
+                    users[i].style.display = "none";
+                }
+          }
+
+          function showAnalyst(){
+                var users = document.querySelectorAll(".analyst")
+                for(var i=0;i<users.length;i++){
+                    users[i].style.display = "block";
+                }
+          }
+        })();
+    </script>
     <title>Crime management</title>
 
     <!-- Bootstrap core CSS -->
@@ -46,24 +89,50 @@
     </nav>
 
     <div class="container-fluid">
+
       <div class="row">
-        <div class="col-sm-4 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-              <li class="active"><a href="#/">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#/analytics">Analytics</a></li>
-            <li><a href="#/criminal">Criminal Transaction</a></li>
-            <li><a href="#/crime">Crime Transaction</a></li>
-            <li><a href="#/prison">Prison Transaction</a></li>
-            <li><a href="#/officer">Officer Transaction</a></li>
+    <div class="col-sm-4 col-md-2 sidebar">
 
-          </ul>
-   
+      <div id="MainMenu">
+
+        <a href="#/" class="list-group-item list-group-item">Overview</a>
+        <a href="#/criminal" class="list-group-item list-group-item">Criminal Transaction</a>
+        <a href="#/crime" class="list-group-item list-group-item">Crime Transaction</a>
+        <a href="#/prison" class="list-group-item list-group-item">Prison Transaction</a>
+        <a href="#/officer" class="list-group-item list-group-item">Officer Transaction</a>
+        <a href="#/reports" class="list-group-item list-group-item">Reports</a>
+
+        <div class="list-group panel">
+        <a href="#demo3" class="list-group-item list-group-item" data-toggle="collapse" data-parent="#MainMenu">Analytics</a>
+              <div class="collapse" id="demo3">
+              <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Crimes vs year <i class="fa fa-caret-down"></i></a>
+              <div class="collapse list-group-submenu" id="SubMenu1">
+                    <a href="#/quarterly" class="list-group-item" data-parent="#SubMenu1">Quarterly crimes</a>
+                    <a href="#/crime2014" class="list-group-item" data-parent="#SubMenu1">Crimes in 2014</a>
+                    <a href="#/crime2015" class="list-group-item" data-parent="#SubMenu1">Crimes in 2015</a>
+                    <a href="#/crime2016" class="list-group-item" data-parent="#SubMenu1">Crimes in 2016</a>
+               </div>
+
+                <a href="#/analysis1"  class="list-group-item">Prison type vs Expenses</a>
+                <a href="#/analysis2"  class="list-group-item">Prison vs Region</a>
+                <a href="#/analysis3"  class="list-group-item">Crimetype vs gender</a>
+                <a href="#/analysis4"  class="list-group-item">Number of prisons vs region</a>
+                <a href="#/analysis5"  class="list-group-item">Regional Crimes</a>
+                <a href="#/analysis6"  class="list-group-item">Racial crime</a>
+
+            </div>
         </div>
-     
-    <div class="col-sm-8 col-md-8 main" ng-view>
+      </div> 
+      
+    </div>  
 
-    </div>
+    <div class="col-sm-8 col-md-8 main" ng-view>
+ 
+
+  </div>  
+       
+     
+   
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -73,8 +142,8 @@
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
     <!--thumbnails for images-->
-    <script src="js/index.js"> </script>
 
+    <script src="js/index.js"> </script>
 
   </body>
 </html>

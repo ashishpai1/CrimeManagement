@@ -1,12 +1,12 @@
 <h2>Prison TRANSACTION: </h2>
 
 
-  <form class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" method="post" action="/insertPrison">
      
     <div class="form-group">
       <label class="control-label col-sm-2" for="prison_id">Prison Id:</label>
       <div class="col-sm-10">
-        <input type="datetime" class="form-control" id="prison_id" placeholder="Enter Prison Id">
+        <input type="datetime" class="form-control" name="prison_id" id="prison_id" placeholder="Enter Prison Id">
       </div>
     </div>
    
@@ -14,7 +14,7 @@
  	  <div class="form-group">
       <label class="control-label col-sm-2" for="prison_name">Prison Name:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="prison_name" placeholder="Enter Prison Name">
+        <input type="text" class="form-control" name="prison_name" id="prison_name" placeholder="Enter Prison Name">
       </div>
     </div>
 
@@ -22,7 +22,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="criminal_id">Criminal ID:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="criminal_id" placeholder="Enter Criminal ID">
+        <input type="text" class="form-control" name="criminal_id" id="criminal_id" placeholder="Enter Criminal ID">
       </div>
     </div>
   

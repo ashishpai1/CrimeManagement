@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
@@ -17,7 +17,6 @@
     <link href="css/login.css" rel="stylesheet"> 
 
   </head>
-
   <body>
 
  <!--
@@ -38,7 +37,7 @@
                         <input type="checkbox" value="remember-me"> Remember me
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" onclick="setCurrentUser()">Sign in</button>
             </form><!-- /form -->
             <a href="#" class="forgot-password">
                 Forgot the password?
@@ -53,6 +52,16 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script> 
 $( document ).ready(function() {
+   
+   function setCurrentUser(){
+        var user = document.getElementById("inputEmail");
+        if(user === "ashish.pai.git@gmail.com"){
+            sessionStorage.setItem("currentUser", "admin"); 
+        }else{
+            sessionStorage.setItem("currentUser", "analyst"); 
+        }
+   }
+
     // DOM ready
 
     // Test data

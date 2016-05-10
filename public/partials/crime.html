@@ -2,18 +2,18 @@
   <h2>CRIME TRANSACTION: </h2>
 
 
-  <form class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" method="post" action="/insertCrime">
      <div class="form-group">
       <label class="control-label col-sm-2" for="crime_id">Crime Id:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="crime_id" placeholder="Enter Criminal Id">
+        <input type="text" class="form-control" name="crime_id" id="crime_id" placeholder="Enter Criminal Id">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="time">Time:</label>
       <div class="col-sm-10">
-        <input type="datetime" class="form-control" id="time" placeholder="Enter time">
+        <input type="datetime" class="form-control" name="time" id="time" placeholder="Enter time">
       </div>
     </div>
    
@@ -23,7 +23,7 @@
  	<div class="form-group">
       <label class="control-label col-sm-2" for="profession">Profession:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="profession" placeholder="Enter Profession">
+        <input type="text" class="form-control" name="profession" id="profession" placeholder="Enter Profession">
       </div>
     </div>
 
@@ -31,7 +31,7 @@
    <div class="form-group">
       <label class="control-label col-sm-2" for="officer_id">Officer ID:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="officer_id" placeholder="Enter Officer Id">
+        <input type="text" class="form-control" name="officer_id" id="officer_id" placeholder="Enter Officer Id">
       </div>
     </div>
 
@@ -39,7 +39,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="criminal_id">Criminal ID:</label>
       <div class="col-sm-10">          
-        <input type="text" class="form-control" id="criminal_id" placeholder="Enter Criminal ID">
+        <input type="text" class="form-control" name="criminal_id" id="criminal_id" placeholder="Enter Criminal ID">
       </div>
     </div>
 
