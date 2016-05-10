@@ -53,11 +53,30 @@
     <div class="col-sm-4 col-md-2 sidebar">
 
       <div id="MainMenu">
+
         <a href="#/" class="list-group-item list-group-item">Overview</a>
-        <a href="#/criminal" class="list-group-item list-group-item">Criminal Transaction</a>
-        <a href="#/crime" class="list-group-item list-group-item">Crime Transaction</a>
-        <a href="#/prison" class="list-group-item list-group-item">Prison Transaction</a>
-        <a href="#/officer" class="list-group-item list-group-item">Officer Transaction</a>        
+        <a href="#/reports" class="list-group-item list-group-item">Reports</a>
+
+        <div class="list-group panel">
+        <a href="#demo3" class="list-group-item list-group-item" data-toggle="collapse" data-parent="#MainMenu">Analytics</a>
+              <div class="collapse" id="demo3">
+              <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1">Crimes vs year <i class="fa fa-caret-down"></i></a>
+              <div class="collapse list-group-submenu" id="SubMenu1">
+                    <a href="#/quarterly" class="list-group-item" data-parent="#SubMenu1">Quarterly crimes</a>
+                    <a href="#/crime2014" class="list-group-item" data-parent="#SubMenu1">Crimes in 2014</a>
+                    <a href="#/crime2015" class="list-group-item" data-parent="#SubMenu1">Crimes in 2015</a>
+                    <a href="#/crime2016" class="list-group-item" data-parent="#SubMenu1">Crimes in 2016</a>
+               </div>
+
+                <a href="#/analysis1"  class="list-group-item">Prison type vs Expenses</a>
+                <a href="#/analysis2"  class="list-group-item">Prison vs Region</a>
+                <a href="#/analysis3"  class="list-group-item">Crimetype vs gender</a>
+                <a href="#/analysis4"  class="list-group-item">Number of prisons vs region</a>
+                <a href="#/analysis5"  class="list-group-item">Regional Crimes</a>
+                <a href="#/analysis6"  class="list-group-item">Racial crime</a>
+
+            </div>
+        </div>
       </div> 
       
     </div>  

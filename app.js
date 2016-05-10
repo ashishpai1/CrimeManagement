@@ -28,7 +28,7 @@ app.use(bodyParser.json())
 
   app.use(express.static(path.join(__dirname, 'public')));
 
-  app.listen(3007, function () {
+  app.listen(3009, function () {
     console.log('Example app listening on port 3000!');
   });
 
@@ -126,6 +126,19 @@ Insert into Prison VALUES (2,'Mexico',131);
              // console.log('The solution is: ', rows[0]);
       });
       res.send( "Prison : " +  JSON.stringify(req.body));
+  });
+
+
+
+  app.post('/index', function (req, res) {
+      //console.log(req.body);
+      console.log(req.body.username);
+      console.log(req.body.password);
+      if(req.body.username === "admin"){
+          res.sendFile(path.join(__dirname + '/index.html'));
+      }else{
+          res.sendFile(path.join(__dirname + '/index1.html'));
+      }
   });
 
   app.get('/getAnalytics', function (req, res) {
