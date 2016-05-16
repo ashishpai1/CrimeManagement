@@ -1,9 +1,10 @@
 <h2>Enter criminal details: </h2>
 
 
-  <form class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded" method="post" action="/insertCriminal">
+  <form class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded">
+  <!-- method="post" action="/insertCriminal"> -->
     <div class="form-group">
-      <label class="control-label col-sm-2" for="name">Name:</label>
+      <label class="control-label col-sm-2" for="name">Criminal Name:</label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
       </div>
@@ -16,23 +17,56 @@
     </div>
     
     <div class="form-group">
-      <label class="control-label col-sm-2" for="age">Age:</label>
+      <label class="control-label col-sm-2" for="age">Criminal Age:</label>
       <div class="col-sm-10">          
         <input type="text" class="form-control" id="age" name="age" placeholder="Enter age">
       </div>
     </div>
 
   <div class="form-group">
-      <label class="control-label col-sm-2" for="age">Profession:</label>
+      <label class="control-label col-sm-2" for="profession">Criminal Profession:</label>
       <div class="col-sm-10">          
         <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter Profession">
       </div>
     </div>
 
+    <div class="form-group">
+    <!--  <label class="control-label col-sm-2" for="race">Race:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="race" name="race" placeholder="Enter Race">
+      </div>
+    -->
+        <label class="control-label col-sm-2 col-md-2" for="criminal_race">Criminal Race:</label>
+        <select class="form-control" style="width:150px; margin-left:10px;" class="col-sm-2" id="criminal_race">
+        <option>White</option>
+        <option>Black</option>
+        <option>Native</option>
+        <option>Asian</option>
+        <option>Hispanic</option>
+      </select>
+
+    </div>
+
+
+    <div class="form-group">
+   
+      <!--
+      <label class="control-label col-sm-2" for="gender">Gender:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="gender" name="gender" placeholder="Enter Gender">
+      </div>
+    -->
+    <label class="control-label col-sm-2 col-md-2" for="gender">Criminal Gender:</label>
+        <select class="form-control" style="width:150px; margin-left:10px;" class="col-sm-2" id="gender">
+        <option>Male</option>
+        <option>Female</option>
+        <option>Others</option>
+      </select>
+    </div>
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" onclick="alert('Criminal Inserted Successfully')">Submit</button>
       </div>
     </div>
   </form>

@@ -38,8 +38,12 @@ angular.module('myApp', ['ngRoute'])
       templateUrl: "partials/olap/crime4.html",
   }).when("/crime5",{
       templateUrl: "partials/olap/crime5.html",
+  }).when("/success",{
+      templateUrl: "partials/success.html",
   })
 })
+
+
 .controller('HomeCtrl', ['$scope', '$http', function($scope, $http){
 	console.log("HomeCtrl");
 }])

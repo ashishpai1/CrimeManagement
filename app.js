@@ -28,7 +28,7 @@ app.use(bodyParser.json())
 
   app.use(express.static(path.join(__dirname, 'public')));
 
-  app.listen(3009, function () {
+  app.listen(3002, function () {
     console.log('Example app listening on port 3000!');
   });
 
@@ -57,26 +57,16 @@ app.use(bodyParser.json())
     console.log(query);
 
     //  {"name":"Ashish vilas Pai","criminal_id":"11","age":"22","profession":"Good"}
-    
+     
      connection.query(query, function(err, rows, fields) {
           if (err) throw err;
               console.log('The solution is: ', rows[0]);
       });
       res.send( "Data Inserted : " +  JSON.stringify(req.body));
+      
   });
 
-  /*
-// Crime transaction
-
-
-Officer transaction
-Insert into Officer VALUES ('Danny',1234,111);
-
-Prison transaction
-Insert into Prison VALUES (2,'Mexico',131);
-
-*/
-
+ 
   app.post('/insertCrime', function (req, res) {
       //Insert into Officer VALUES ('Danny',1234,111);
 
@@ -86,6 +76,10 @@ Insert into Prison VALUES (2,'Mexico',131);
         console.log(req.body);
         return res.sendStatus(400)
       }
+    
+                //    res.send("{res:ok}"); 
+
+      
       var query = "Insert into Crime VALUES ('" + req.body.crime_id + "','"+ req.body.time +"','"+ req.body.profession +"','"+req.body.officer_id+"', '"+req.body.criminal_id+"')";
       console.log(query);
       connection.query(query, function(err, rows, fields) {
@@ -93,6 +87,7 @@ Insert into Prison VALUES (2,'Mexico',131);
              // console.log('The solution is: ', rows[0]);
       });
       res.send( "Data Crime : " +  JSON.stringify(req.body));
+      
   });
 
 
@@ -105,11 +100,17 @@ Insert into Prison VALUES (2,'Mexico',131);
       }
       var query = "Insert into Officer VALUES ('" + req.body.officer_name + "','"+req.body.officer_id+"','"+req.body.crime_id+"')";
       console.log(query);
+                // res.send("{res:ok}"); 
+
+     
       connection.query(query, function(err, rows, fields) {
           if (err) throw err;
              // console.log('The solution is: ', rows[0]);
       });
+
       res.send( "Officer : " +  JSON.stringify(req.body));
+     
+
   });
 
   app.post('/insertPrison', function (req, res) {
@@ -118,22 +119,26 @@ Insert into Prison VALUES (2,'Mexico',131);
         console.log(req);
         return res.sendStatus(400)
       }
-  
+     // res.send("{res:ok}"); 
+
+    
       var query = "Insert into Prison VALUES ('" + req.body.prison_id + "','"+req.body.prison_name+"','"+req.body.criminal_id+"')";
       console.log(query);
       connection.query(query, function(err, rows, fields) {
-          if (err) throw err;
+          if (err) { 
+              console.log("Hello")
+              res.send("{res:ok}"); 
+          }
              // console.log('The solution is: ', rows[0]);
       });
-      res.send( "Prison : " +  JSON.stringify(req.body));
+  
+   //   res.send( "Prison : " +  JSON.stringify(req.body));
   });
 
 
 
   app.post('/index', function (req, res) {
       //console.log(req.body);
-      console.log(req.body.username);
-      console.log(req.body.password);
       if(req.body.username === "admin"){
           res.sendFile(path.join(__dirname + '/index.html'));
       }else{
@@ -141,15 +146,14 @@ Insert into Prison VALUES (2,'Mexico',131);
       }
   });
 
-  app.get('/getAnalytics', function (req, res) {
-  	fs.readFile(__dirname + "/public" + "/submission.csv",'utf8', function(err, result){
-  		console.log(result);
-  		var result = result.toString().split("\r\n");
-    		result.shift();
-    	 	console.log(result[0].split(",")[0]);	  	
-    	  res.send(result);
-  	  });  
+  app.get('/logout', function (req, res) {
+      //console.log(req.body)
+          res.sendFile(path.join(__dirname + '/login.html'));
+     
   });
+
+
+ 
 
 
 

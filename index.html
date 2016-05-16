@@ -7,11 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <script>
-        
-    </script>
     <title>Crime management</title>
+    <style type="text/css">
+        body, html {
+            height: 100%;
+            background-repeat: repeat;
+            background: url("../img/wordcount1.jpg") repeat center center fixed;
+        }
 
+    </style>
     <!-- Bootstrap core CSS -->
    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -38,7 +42,7 @@
             <li><a href="#">Dashboard</a></li>
             <li><a href="#">Settings</a></li>
             <li><a href="#">Profile</a></li>
-            <li><a href="#">Signout</a></li>
+            <li><a href="/logout">Signout</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">
@@ -53,11 +57,12 @@
     <div class="col-sm-4 col-md-2 sidebar">
 
       <div id="MainMenu">
-        <a href="#/" class="list-group-item list-group-item">Overview</a>
-        <a href="#/criminal" class="list-group-item list-group-item">Criminal Transaction</a>
-        <a href="#/crime" class="list-group-item list-group-item">Crime Transaction</a>
-        <a href="#/prison" class="list-group-item list-group-item">Prison Transaction</a>
-        <a href="#/officer" class="list-group-item list-group-item">Officer Transaction</a>        
+          <a href="#/" class="list-group-item list-group-item">Welcome</a>
+          <a href="#/criminal" class="list-group-item list-group-item">Criminal Details </a>
+          <a href="#/crime" class="list-group-item list-group-item">Crime Details</a>
+          <a href="#/prison" class="list-group-item list-group-item">Imprisonment Details</a>
+          <a href="#/officer" class="list-group-item list-group-item">Officer Details</a>     
+
       </div> 
       
     </div>  
